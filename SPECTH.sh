@@ -1,5 +1,21 @@
 #!/bin/bash
+ '
+SPECTH
+Copyright (C) 2026 Universidade Federal de Mato Grosso do Sul
 
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+'
 #Configuração
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 NOME_PASTA="resultados" 
@@ -36,7 +52,7 @@ while [[ "$#" -gt 0 ]]; do
             echo "  -r, --run N Define a quantidade de execuções do perf (default: 10)"
             echo ""
             echo "Exemplos:"
-            echo "  Rodar testes: ./benchmark.sh --all --r 50 Bubble"
+            echo "  Rodar testes: ./benchmark.sh --all -r 50 Bubble"
             echo "  Apenas plotar: ./benchmark.sh --plot-only resultados_20260226_125343"
             echo "Caso seu processador tenha núcleos híbridos, experimente usar taskset."
             echo "Exemplo: taskset --cpu-list 1 ./benchmark.sh --all Bubble"
@@ -508,7 +524,7 @@ echo "=========================================================="
 echo "                  RESUMO DA EXECUÇÃO                      "
 echo "=========================================================="
 echo "[*] Pastas alvo: ${ALVOS[*]}"
-echo "[*] Repetições por teste (--r): $NUM_RUNS"
+echo "[*] Repetições por teste (-r): $NUM_RUNS"
 echo "[*] Diretório de saída: $NOME_PASTA_COMPLETO"
 echo "[*] Eventos que serão coletados:"
 echo "    -> $EVENTOS_PT"
